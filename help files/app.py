@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-
+from equipment import Equipment
 app = Flask(__name__)
 
 # heroes = {
@@ -58,7 +58,7 @@ def choose_hero():
     # TODO на GET отрисовываем форму.
     # TODO на POST отправляем форму и делаем редирект на эндпоинт choose enemy
     if request.method == "GET":
-        result = {}
+        result = Equipment()
         return render_template('hero_choosing.html', result=result)
 
 

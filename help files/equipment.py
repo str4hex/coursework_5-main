@@ -51,8 +51,8 @@ class Equipment:
     def _get_equipment_data() -> EquipmentData:
         # TODO этот метод загружает json в переменную EquipmentData
         equipment_file = open("./data/equipment.json")
-        data = json.load( ... )
-        equipment_schema = marshmallow_dataclass.class_schema( ... )
+        data = json.load(equipment_file)
+        equipment_schema = marshmallow_dataclass.class_schema(data)
         try:
             return equipment_schema().load(data)
         except marshmallow.exceptions.ValidationError:
